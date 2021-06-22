@@ -14,13 +14,30 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_binding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="button1" />
+            android:text="RemoteService$Binding" />
+
         <Button
+            android:id="@+id/btn_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="button2" />
+            android:text="RemoteService" />
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LocalService" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ServiceStartArguments" />
+
+
     </LinearLayout>
 
 

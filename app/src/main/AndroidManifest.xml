@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jt.aidlsample">
+    package="com.jt.sample">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AidlSample">
         <activity
-            android:name=".ScrollingActivity"
+            android:name="com.jt.sample.ScrollingActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AidlSample.NoActionBar">
             <intent-filter>
@@ -19,6 +19,66 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Service Samples -->
+
+        <service android:name="com.jt.sample.LocalService" android:stopWithTask="true" />
+
+        <activity android:name="com.jt.sample.LocalServiceActivities$Controller"
+            android:label="@string/activity_local_service_controller"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.jt.sample.LocalServiceActivities$Binding"
+            android:label="@string/activity_local_service_binding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.jt.sample.ServiceStartArguments" />
+
+        <activity android:name="com.jt.sample.ServiceStartArguments$Controller"
+            android:label="@string/activity_service_start_arguments_controller"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.jt.sample.remote.RemoteService" android:process=":remote" />
+
+        <activity android:name="com.jt.sample.remote.Controller"
+            android:label="@string/activity_remote_service_controller"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.jt.sample.remote.Binding"
+            android:label="@string/activity_remote_service_binding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.jt.sample.remote.BindingOptions"
+            android:label="@string/activity_remote_service_binding_options">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

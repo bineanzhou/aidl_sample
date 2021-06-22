@@ -1,2 +1,3 @@
+include ':app:client'
 include ':app'
 rootProject.name = "AidlSample"

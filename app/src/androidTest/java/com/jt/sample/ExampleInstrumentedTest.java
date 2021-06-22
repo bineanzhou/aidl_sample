@@ -1,4 +1,4 @@
-package com.jt.aidlsample;
+package com.jt.sample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

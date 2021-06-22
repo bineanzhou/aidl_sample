@@ -1,4 +1,4 @@
-package com.jt.aidlsample;
+package com.jt.client;
 
 import org.junit.Test;
 

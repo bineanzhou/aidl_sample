@@ -1,5 +1,6 @@
-package com.jt.aidlsample;
+package com.jt.sample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.jt.sample.remote.Binding;
+import com.jt.sample.remote.BindingOptions;
+import com.jt.sample.remote.RemoteService;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -27,6 +32,44 @@ public class ScrollingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+        findViewById(R.id.btn_1).setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent();
+                startIntent.setClass(ScrollingActivity.this, LocalService.class);
+                startService(startIntent);
+            }
+        });
+        findViewById(R.id.btn_2).setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+                Intent startIntent = new Intent();
+                startIntent.putExtra("name", "msg:" + System.currentTimeMillis());
+                startIntent.setClass(ScrollingActivity.this, ServiceStartArguments.class);
+                startService(startIntent);
+            }
+        });
+        findViewById(R.id.btn_3).setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent();
+                startIntent.setClass(ScrollingActivity.this, RemoteService.class);
+                startService(startIntent);
+            }
+        });
+        findViewById(R.id.btn_binding).setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ScrollingActivity.this, Binding.class);
+                startActivity(intent);
             }
         });
     }
